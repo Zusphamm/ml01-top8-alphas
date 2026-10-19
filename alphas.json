@@ -1,0 +1,80 @@
+{
+ "source": "ML01 SINGLES_OS10 paper (39 alphas), top 8 by paper return",
+ "paper_from": "2026-10-13",
+ "paper_to": "2026-10-18",
+ "frozen_at": "2026-10-12T04:48:00.828025+00:00",
+ "alphas": [
+  {
+   "key": "diverge|fund_chg40|taker20|s5",
+   "expr": "cs_zscore(ts_ema(cs_zscore(ts_mean(funding, 3) - ts_mean(funding, 40)) - cs_zscore(ts_mean(taker_buy_ratio, 20)), 5))",
+   "sign": -1,
+   "is_sharpe": 1.8535,
+   "os_sharpe": 1.3357,
+   "paper_ret": 0.01046,
+   "paper_rank_of_39": 1
+  },
+  {
+   "key": "cond|taker10|taker20|low|s3",
+   "expr": "cs_zscore(ts_ema(cs_zscore(ts_mean(taker_buy_ratio, 10)) * (1 - rank(ts_mean(taker_buy_ratio, 20))), 3))",
+   "sign": 1,
+   "is_sharpe": 1.4662,
+   "os_sharpe": 1.0442,
+   "paper_ret": 0.00655,
+   "paper_rank_of_39": 2
+  },
+  {
+   "key": "regime|illiq20|taker40|dispersion|s5",
+   "expr": "cs_zscore(ts_ema(where(st_dispersion > 0, cs_zscore(log(ts_mean(abs(returns) / quote_volume, 20))), cs_zscore(ts_mean(taker_buy_ratio, 40))), 5))",
+   "sign": 1,
+   "is_sharpe": 2.1471,
+   "os_sharpe": 1.6832,
+   "paper_ret": 0.00112,
+   "paper_rank_of_39": 3
+  },
+  {
+   "key": "regime|vpin60|smart_dumb10|mkt_vol|s5",
+   "expr": "cs_zscore(ts_ema(where(st_mkt_vol > 0, cs_zscore(ts_mean(ag_vpin, 60)), cs_zscore(log(ts_mean(ls_top_pos, 10)) - log(ts_mean(ls_global, 10)))), 5))",
+   "sign": 1,
+   "is_sharpe": 1.5456,
+   "os_sharpe": 1.0778,
+   "paper_ret": -0.00112,
+   "paper_rank_of_39": 4
+  },
+  {
+   "key": "diverge|trade_size10|vwap_dev40|s0",
+   "expr": "cs_zscore(cs_zscore(log(ts_mean(trade_size, 10))) - cs_zscore(ts_mean(log(close / vwap), 40)))",
+   "sign": -1,
+   "is_sharpe": 1.5618,
+   "os_sharpe": 1.4792,
+   "paper_ret": -0.00616,
+   "paper_rank_of_39": 5
+  },
+  {
+   "key": "diverge|size60|taker5|s0",
+   "expr": "cs_zscore(cs_zscore(log(ts_mean(quote_volume, 60))) - cs_zscore(ts_mean(taker_buy_ratio, 5)))",
+   "sign": -1,
+   "is_sharpe": 2.5423,
+   "os_sharpe": 0.9984,
+   "paper_ret": -0.01099,
+   "paper_rank_of_39": 6
+  },
+  {
+   "key": "cond|trade_size60|trade_size5|low|s0",
+   "expr": "cs_zscore(cs_zscore(log(ts_mean(trade_size, 60))) * (1 - rank(log(ts_mean(trade_size, 5)))))",
+   "sign": -1,
+   "is_sharpe": 1.663,
+   "os_sharpe": 1.7654,
+   "paper_ret": -0.01414,
+   "paper_rank_of_39": 7
+  },
+  {
+   "key": "diverge|size5|taker5|s5",
+   "expr": "cs_zscore(ts_ema(cs_zscore(log(ts_mean(quote_volume, 5))) - cs_zscore(ts_mean(taker_buy_ratio, 5)), 5))",
+   "sign": -1,
+   "is_sharpe": 2.9678,
+   "os_sharpe": 1.5839,
+   "paper_ret": -0.01452,
+   "paper_rank_of_39": 8
+  }
+ ]
+}
