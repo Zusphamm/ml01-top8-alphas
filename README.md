@@ -52,6 +52,23 @@ Expressions (sign +1: long high score, short low score):
    cs_zscore(ts_ema(cs_zscore(log(ts_mean(quote_volume, 5))) - cs_zscore(ts_mean(taker_buy_ratio, 5)), 5))
    ```
 
+## Blackbox 2026-07-01 .. 2026-10-09 (101 days, run once 2026-10-12)
+
+| # | Key | Group | Return | Sharpe | Max DD | Win |
+|---|-----|-------|--------|--------|--------|-----|
+| 1 | `diverge\|fund_chg40\|taker20\|s5` | seen | +9.2% | 1.51 | -9.1% | 50% |
+| 2 | `cond\|taker10\|taker20\|low\|s3` | seen | +8.4% | 1.84 | -10.2% | 55% |
+| 3 | `regime\|illiq20\|taker40\|dispersion\|s5` | holdout | -3.2% | -0.38 | -19.0% | 44% |
+| 4 | `regime\|vpin60\|smart_dumb10\|mkt_vol\|s5` | holdout | +19.0% | 3.84 | -3.4% | 60% |
+| 5 | `diverge\|trade_size10\|vwap_dev40\|s0` | seen | -0.6% | 0.02 | -17.5% | 52% |
+| 6 | `diverge\|size60\|taker5\|s0` | seen | +13.1% | 3.19 | -4.5% | 57% |
+| 7 | `cond\|trade_size60\|trade_size5\|low\|s0` | seen | +4.1% | 0.87 | -10.6% | 54% |
+| 8 | `diverge\|size5\|taker5\|s5` | seen | +10.8% | 2.54 | -3.6% | 57% |
+
+Same live-sim as the paper ($10k, tiered cost, real funding). "seen" = this window had been computed for the alpha
+before the blackbox rule (a re-read); "holdout" = first look. With ag / ls lagged 1 day (variant B) #4 gives 3.77,
+the others are unchanged. A Sharpe over 101 days has a standard error of about 1.9.
+
 ## Setup
 
 | Item | Value |
@@ -66,8 +83,10 @@ Expressions (sign +1: long high score, short low score):
 
 | File | Content |
 |------|---------|
-| `alphas.json` | key, expression, sign, IS / OS Sharpe, paper return and rank |
+| `alphas.json` | key, expression, sign, IS / OS Sharpe, blackbox metrics, paper return and rank |
+| `blackbox_daily.csv` | daily blackbox rows of the 8 alphas (variant A) |
 | `paper_daily.csv` | daily paper rows of the 8 alphas (return, equity, pnl, funding, cost, n, exposures) |
 | `grammar.py` | the typed grammar: primitives, templates, `parse_key` / `expr` (stdlib only) |
+| `live/` | live trader, one Binance account per alpha ([live/README.md](live/README.md)) |
 
-Data panels and the DSL engine are not included.
+Data panels and the DSL engine are not included; `live/` imports them from `~/ML01`.

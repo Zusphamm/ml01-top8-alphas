@@ -11,7 +11,15 @@
    "is_sharpe": 1.8535,
    "os_sharpe": 1.3357,
    "paper_ret": 0.01046,
-   "paper_rank_of_39": 1
+   "paper_rank_of_39": 1,
+   "blackbox": {
+    "group": "seen",
+    "ret": 0.09221,
+    "sharpe": 1.511,
+    "maxdd": -0.0909,
+    "win": 0.505,
+    "sharpe_lag_ag_ls": 1.511
+   }
   },
   {
    "key": "cond|taker10|taker20|low|s3",
@@ -20,7 +28,15 @@
    "is_sharpe": 1.4662,
    "os_sharpe": 1.0442,
    "paper_ret": 0.00655,
-   "paper_rank_of_39": 2
+   "paper_rank_of_39": 2,
+   "blackbox": {
+    "group": "seen",
+    "ret": 0.08441,
+    "sharpe": 1.842,
+    "maxdd": -0.102,
+    "win": 0.545,
+    "sharpe_lag_ag_ls": 1.842
+   }
   },
   {
    "key": "regime|illiq20|taker40|dispersion|s5",
@@ -29,7 +45,15 @@
    "is_sharpe": 2.1471,
    "os_sharpe": 1.6832,
    "paper_ret": 0.00112,
-   "paper_rank_of_39": 3
+   "paper_rank_of_39": 3,
+   "blackbox": {
+    "group": "holdout",
+    "ret": -0.03174,
+    "sharpe": -0.375,
+    "maxdd": -0.1898,
+    "win": 0.436,
+    "sharpe_lag_ag_ls": -0.375
+   }
   },
   {
    "key": "regime|vpin60|smart_dumb10|mkt_vol|s5",
@@ -38,7 +62,15 @@
    "is_sharpe": 1.5456,
    "os_sharpe": 1.0778,
    "paper_ret": -0.00112,
-   "paper_rank_of_39": 4
+   "paper_rank_of_39": 4,
+   "blackbox": {
+    "group": "holdout",
+    "ret": 0.19038,
+    "sharpe": 3.838,
+    "maxdd": -0.0342,
+    "win": 0.604,
+    "sharpe_lag_ag_ls": 3.769
+   }
   },
   {
    "key": "diverge|trade_size10|vwap_dev40|s0",
@@ -47,7 +79,15 @@
    "is_sharpe": 1.5618,
    "os_sharpe": 1.4792,
    "paper_ret": -0.00616,
-   "paper_rank_of_39": 5
+   "paper_rank_of_39": 5,
+   "blackbox": {
+    "group": "seen",
+    "ret": -0.00607,
+    "sharpe": 0.024,
+    "maxdd": -0.1749,
+    "win": 0.515,
+    "sharpe_lag_ag_ls": 0.024
+   }
   },
   {
    "key": "diverge|size60|taker5|s0",
@@ -56,7 +96,15 @@
    "is_sharpe": 2.5423,
    "os_sharpe": 0.9984,
    "paper_ret": -0.01099,
-   "paper_rank_of_39": 6
+   "paper_rank_of_39": 6,
+   "blackbox": {
+    "group": "seen",
+    "ret": 0.13132,
+    "sharpe": 3.188,
+    "maxdd": -0.0446,
+    "win": 0.574,
+    "sharpe_lag_ag_ls": 3.188
+   }
   },
   {
    "key": "cond|trade_size60|trade_size5|low|s0",
@@ -65,7 +113,15 @@
    "is_sharpe": 1.663,
    "os_sharpe": 1.7654,
    "paper_ret": -0.01414,
-   "paper_rank_of_39": 7
+   "paper_rank_of_39": 7,
+   "blackbox": {
+    "group": "seen",
+    "ret": 0.04139,
+    "sharpe": 0.87,
+    "maxdd": -0.1063,
+    "win": 0.535,
+    "sharpe_lag_ag_ls": 0.87
+   }
   },
   {
    "key": "diverge|size5|taker5|s5",
@@ -74,7 +130,16 @@
    "is_sharpe": 2.9678,
    "os_sharpe": 1.5839,
    "paper_ret": -0.01452,
-   "paper_rank_of_39": 8
+   "paper_rank_of_39": 8,
+   "blackbox": {
+    "group": "seen",
+    "ret": 0.10789,
+    "sharpe": 2.545,
+    "maxdd": -0.0362,
+    "win": 0.574,
+    "sharpe_lag_ag_ls": 2.545
+   }
   }
- ]
+ ],
+ "blackbox_window": "2026-07-01 .. 2026-10-09 (101 days), live-sim run 2026-10-12"
 }

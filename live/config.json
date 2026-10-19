@@ -1,0 +1,77 @@
+{
+ "note": "one Binance account (sub-account) per slot; keys BINANCE_KEY_<SLOT> / BINANCE_SECRET_<SLOT> in live/.env. book 'paper' = paper / blackbox weights (every basket name), 'topK' (e.g. 'top15') = K long + K short equal weight. enabled false = never sends orders, even with TOP8_LIVE=1.",
+ "alphas": [
+  {
+   "slot": "a1",
+   "key": "diverge|fund_chg40|taker20|s5",
+   "sign": -1,
+   "enabled": false,
+   "notional": 2000,
+   "leverage": 5,
+   "book": "paper"
+  },
+  {
+   "slot": "a2",
+   "key": "cond|taker10|taker20|low|s3",
+   "sign": 1,
+   "enabled": false,
+   "notional": 2000,
+   "leverage": 5,
+   "book": "paper"
+  },
+  {
+   "slot": "a3",
+   "key": "regime|illiq20|taker40|dispersion|s5",
+   "sign": 1,
+   "enabled": false,
+   "notional": 2000,
+   "leverage": 5,
+   "book": "paper"
+  },
+  {
+   "slot": "a4",
+   "key": "regime|vpin60|smart_dumb10|mkt_vol|s5",
+   "sign": 1,
+   "enabled": false,
+   "notional": 2000,
+   "leverage": 5,
+   "book": "paper"
+  },
+  {
+   "slot": "a5",
+   "key": "diverge|trade_size10|vwap_dev40|s0",
+   "sign": -1,
+   "enabled": false,
+   "notional": 2000,
+   "leverage": 5,
+   "book": "paper"
+  },
+  {
+   "slot": "a6",
+   "key": "diverge|size60|taker5|s0",
+   "sign": -1,
+   "enabled": false,
+   "notional": 2000,
+   "leverage": 5,
+   "book": "paper"
+  },
+  {
+   "slot": "a7",
+   "key": "cond|trade_size60|trade_size5|low|s0",
+   "sign": -1,
+   "enabled": false,
+   "notional": 2000,
+   "leverage": 5,
+   "book": "paper"
+  },
+  {
+   "slot": "a8",
+   "key": "diverge|size5|taker5|s5",
+   "sign": -1,
+   "enabled": false,
+   "notional": 2000,
+   "leverage": 5,
+   "book": "paper"
+  }
+ ]
+}

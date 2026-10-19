@@ -1,0 +1,6 @@
+.env
+live/.env
+live/state/
+live/ledger/
+live/logs/
+__pycache__/
